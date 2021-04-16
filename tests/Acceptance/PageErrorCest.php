@@ -8,9 +8,11 @@ use Simple\View\Bulma\Tests\AcceptanceTester;
 
 final class PageErrorCest
 {
-    public function errorPage(AcceptanceTester $I): void
+    public function testPageError(AcceptanceTester $I): void
     {
+        $I->amGoingTo('go to the error page');
         $I->amOnPage('/about');
+
         $I->wantTo('see error page.');
         $I->see('404');
         $I->see('The page /about not found.');

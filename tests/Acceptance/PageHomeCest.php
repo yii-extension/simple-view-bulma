@@ -8,10 +8,13 @@ use Simple\View\Bulma\Tests\AcceptanceTester;
 
 final class PageHomeCest
 {
-    public function testHomePage(AcceptanceTester $I): void
+    public function testPageHome(AcceptanceTester $I): void
     {
+        $I->amGoingTo('go to the index page');
         $I->amOnPage('/');
-        $I->wantTo('see page index.');
-        $I->see('Hello World');
+
+        $I->expectTo('see page index.');
+        $I->see('Hello');
+        $I->see('My first website with Yii 3.0!');
     }
 }
