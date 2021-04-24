@@ -18,6 +18,7 @@ use Yiisoft\Yii\View\LayoutParametersInjectionInterface;
 
 final class ParametersViewInjection implements ContentParametersInjectionInterface, LayoutParametersInjectionInterface
 {
+    private Aliases $aliases;
     private AssetManager $assetManager;
     private TranslatorInterface $translator;
     private UrlGeneratorInterface $urlGenerator;
