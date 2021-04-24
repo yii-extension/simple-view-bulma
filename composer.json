@@ -35,7 +35,7 @@
         "psr/log": "^1.1",
         "roave/infection-static-analysis-plugin": "^1.7",
         "vimeo/psalm": "^4.7",
-        "yiisoft/config": "^1.0@dev",
+        "yiisoft/config": "dev-improve-config-diff-logic",
         "yiisoft/error-handler": "^3.0@dev",
         "yiisoft/yii-web": "^3.0@dev"
     },
