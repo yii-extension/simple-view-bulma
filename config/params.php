@@ -20,9 +20,4 @@ return [
             Reference::to(ParametersViewInjection::class),
         ],
     ],
-
-    'yii-extension/user-view-bulma' => [
-        'fallbackLocale' => null,
-        'locale' => 'en-US',
-    ],
 ];

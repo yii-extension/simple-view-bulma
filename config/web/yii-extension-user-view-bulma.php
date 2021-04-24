@@ -25,12 +25,6 @@ return [
     MessageFormatterInterface::class => IntlMessageFormatter::class,
 
     TranslatorInterface::class => [
-        'class' => Translator:: class,
-        '__construct()' => [
-            $params['yii-extension/user-view-bulma']['locale'],
-            $params['yii-extension/user-view-bulma']['fallbackLocale'],
-            Reference::to(EventDispatcherInterface::class),
-        ],
         'addCategorySource()' => [
             static fn(MessageReaderInterface $messageReader, MessageFormatterInterface $messageFormatter) =>
                 new CategorySource('simple-view-bulma', $messageReader, $messageFormatter),
