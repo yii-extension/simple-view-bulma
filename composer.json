@@ -55,8 +55,8 @@
         },
         "config-plugin": {
             "params": "config/params.php",
-            "web": [
-                "config/web/*.php"
+            "common": [
+                "config/common/*.php"
             ],
             "routes": "config/routes.php"
         }

@@ -9,7 +9,7 @@ use Yiisoft\Yii\View\CsrfViewInjection;
 return [
     'yiisoft/aliases' => [
         'aliases' => [
-            '@simple-view-bulma' =>  '@vendor/yii-extension/simple-view-bulma',
+            '@simple-view-bulma' => '@vendor/yii-extension/simple-view-bulma',
             '@layout' => '@simple-view-bulma/storage/layout'
         ]
     ],
@@ -20,4 +20,10 @@ return [
             Reference::to(ParametersViewInjection::class),
         ],
     ],
+
+    'yiisoft/translator' => [
+        'categorySources' => [
+            Reference::to('categorySourceSimpleViewBulma'),
+        ],
+    ],    
 ];
