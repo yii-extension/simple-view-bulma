@@ -10,7 +10,8 @@ return [
     'yiisoft/aliases' => [
         'aliases' => [
             '@simple-view-bulma' => '@vendor/yii-extension/simple-view-bulma',
-            '@layout' => '@simple-view-bulma/storage/layout'
+            '@storage' => '@simple-view-bulma/storage',
+            '@layout' => '@simple-view-bulma/storage/layout',
         ]
     ],
 

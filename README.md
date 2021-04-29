@@ -48,10 +48,10 @@ return [
     Extractor::class => [
         '__construct()' => [
             'messageReader' => static fn (Aliases $aliases) => new \Yiisoft\Translator\Message\Php\MessageSource(
-                $aliases->get('@resources/translation')
+                $aliases->get('@storage/translation')
             ),
             'messageWriter' => static fn (Aliases $aliases) => new \Yiisoft\Translator\Message\Php\MessageSource(
-                $aliases->get('@resources/translation')
+                $aliases->get('@storage/translation')
             ),
         ],
     ],
