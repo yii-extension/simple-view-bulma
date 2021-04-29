@@ -59,6 +59,7 @@ final class ApplicationRunner
         $aliases->set('@assetsUrl', '/assets');
         $aliases->set('@npm', '@root/vendor/npm-asset');
         $aliases->set('@runtime', '@root/tests/_data/runtime');
+        $aliases->set('@storage', '@root/storage');
         $aliases->set('@simple-view-bulma', '@root');
 
         // Register error handler with real container-configured dependencies.
