@@ -29,6 +29,41 @@
 composer create-project --prefer-dist --stability dev yii-extension/simple-app <your project>
 composer require yii-extension/simple-view-bulma:@dev
 ```
+
+## Translation extractor
+
+The root directory of simple-app: `config/packages/yiisoft-translator-extractor/console.php`:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use Yiisoft\Aliases\Aliases;
+use Yiisoft\Translator\Extractor\Extractor;
+
+/** @var array $params */
+
+return [
+    Extractor::class => [
+        '__construct()' => [
+            'messageReader' => static fn (Aliases $aliases) => new \Yiisoft\Translator\Message\Php\MessageSource(
+                $aliases->get('@resources/translation')
+            ),
+            'messageWriter' => static fn (Aliases $aliases) => new \Yiisoft\Translator\Message\Php\MessageSource(
+                $aliases->get('@resources/translation')
+            ),
+        ],
+    ],
+];
+```
+
+The root directory of simple-app:
+
+```shell
+./yii translator/extract --languages=es --only=**/vendor/yii-extension/simple-view-bulma/storage/**
+```
+
 ## Codeception testing
 
 The package is tested with [Codeception](https://github.com/Codeception/Codeception). To run tests:
