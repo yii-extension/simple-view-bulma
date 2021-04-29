@@ -20,4 +20,10 @@ return [
             Reference::to(ParametersViewInjection::class),
         ],
     ],
+
+    'yiisoft/translator' => [
+        'categorySources' => [
+            Reference::to('categorySourceSimpleViewBulma'),
+        ],
+    ],
 ];
