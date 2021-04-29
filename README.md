@@ -27,10 +27,15 @@
 
 ```shell
 composer create-project --prefer-dist --stability dev yii-extension/simple-app <your project>
+cd <your project>
 composer require yii-extension/simple-view-bulma:@dev
 ```
 
 ## Translation extractor
+
+```shell
+composer require yiisoft/translator-extractor --prefer-dist
+```
 
 The root directory of simple-app: `config/packages/yiisoft-translator-extractor/console.php`:
 
