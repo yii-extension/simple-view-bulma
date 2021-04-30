@@ -7,6 +7,6 @@ return [
     'Please contact us if you think this is a server error. Thank you' => 'Póngase en contacto con nosotros si cree que se trata de un error del servidor. Gracias',
     'Go Back Home' => 'Ir a la Página Principal',
     'Hello!' => 'Hola!',
-    "Let's start something great with <strong>Yii3</strong>!" => "¡Empecemos algo genial con <strong> Yii3 </strong>!",
+    "Let's start something great with <strong>Yii3</strong>!" => "¡Empecemos algo genial con <strong> Yii3</strong>!",
     "Don't forget to check the guide." => "No olvide consultar la guía.",
 ];
