@@ -53,10 +53,10 @@ return [
     Extractor::class => [
         '__construct()' => [
             'messageReader' => static fn (Aliases $aliases) => new \Yiisoft\Translator\Message\Php\MessageSource(
-                $aliases->get('@storage/translation')
+                $aliases->get('@translations')
             ),
             'messageWriter' => static fn (Aliases $aliases) => new \Yiisoft\Translator\Message\Php\MessageSource(
-                $aliases->get('@storage/translation')
+                $aliases->get('@translations')
             ),
         ],
     ],
