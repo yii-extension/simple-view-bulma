@@ -31,6 +31,12 @@ cd <your project>
 composer require yii-extension/simple-view-bulma:@dev
 ```
 
+## Using translations
+
+By default the package includes the translation into spanish, you just have to copy the root directory of the application, where the translations will be saved, for your convenience we have defined the aliases of `@translations` for this.
+
+The translation is in the `/storage/translations` directory. 
+
 ## Translation extractor
 
 ```shell
