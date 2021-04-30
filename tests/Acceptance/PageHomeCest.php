@@ -14,7 +14,7 @@ final class PageHomeCest
         $I->amOnPage('/');
 
         $I->expectTo('see page index.');
-        $I->see('Hello');
-        $I->see('My first website with Yii 3.0!');
+        $I->see('Hello!');
+        $I->see("Let's start something great with Yii3!");
     }
 }

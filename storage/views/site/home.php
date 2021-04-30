@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Yiisoft\Html\Html;
 use Yiisoft\Translator\TranslatorInterface;
 use Yiisoft\View\WebView;
 
@@ -10,12 +11,24 @@ use Yiisoft\View\WebView;
  * @var $this WebView
  */
 
-$this->params['breadcrumbs'] = '/';
-$this->setTitle('My App');
+$title = $translator->translate('My Project', [], 'simple-view-bulma');
+
+$this->setTitle(Html::encode($title));
 ?>
 
-<h1 class="title"><?= $translator->translate('Hello World', [], 'simple-view-bulma') ?></h1>
+<h1 class="title"><?= $translator->translate('Hello!', [], 'simple-view-bulma') ?></h1>
+
 <p class="subtitle">
-    <?= $translator->translate('My first website with', [], 'simple-view-bulma') ?>
-    <strong>Yii 3.0!</strong>
+    <?= $translator->translate(
+        "Let's start something great with <strong>Yii3</strong>!",
+        [],
+        'simple-view-bulma'
+    ) ?>
 </p>
+
+<p class="subtitle">
+    <a class='has-text-link' href="https://github.com/yiisoft/docs/tree/master/guide/en" target="_blank" rel="noopener">
+        <?= $translator->translate("Don't forget to check the guide.", [], 'simple-view-bulma') ?>
+    </a>
+</p>
+
