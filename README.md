@@ -69,7 +69,7 @@ return [
 
 ## Using translations
 
-By default the package includes the translation into spanish, you just have to copy the root directory of the application, where the translations will be saved, for your convenience we have defined the aliases of `@translations` for this.
+By default the package includes the translation into spanish and russian.
 
 The translation is in the `/storage/translations` directory. 
 
@@ -95,10 +95,10 @@ return [
     Extractor::class => [
         '__construct()' => [
             'messageReader' => static fn (Aliases $aliases) => new \Yiisoft\Translator\Message\Php\MessageSource(
-                $aliases->get('@translations')
+                $aliases->get('@simple-view-bulma/translations')
             ),
             'messageWriter' => static fn (Aliases $aliases) => new \Yiisoft\Translator\Message\Php\MessageSource(
-                $aliases->get('@translations')
+                $aliases->get('@simple-view-bulma/translations')
             ),
         ],
     ],
