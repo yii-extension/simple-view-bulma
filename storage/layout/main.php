@@ -8,6 +8,7 @@ use Yiisoft\Assets\AssetManager;
 use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Router\UrlMatcherInterface;
 use Yiisoft\Translator\TranslatorInterface;
+use Yiisoft\View\WebView;
 
 /**
  * @var AssetManager $assetManager
@@ -15,6 +16,7 @@ use Yiisoft\Translator\TranslatorInterface;
  * @var CsrfTokenInterface $csrf
  * @var TranslatorInterface $translator
  * @var UrlMatcherInterface $urlMatcher
+ * @var Webview $this
  */
 
 $assetManager->register([ViewBulmaAsset::class]);
