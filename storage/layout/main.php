@@ -6,6 +6,7 @@ use Simple\View\Bulma\Asset\ViewBulmaAsset;
 use Yii\Extension\Widget\FlashMessage;
 use Yiisoft\Assets\AssetManager;
 use Yiisoft\Csrf\CsrfTokenInterface;
+use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Router\UrlMatcherInterface;
 use Yiisoft\Translator\TranslatorInterface;
 use Yiisoft\View\WebView;
@@ -15,6 +16,7 @@ use Yiisoft\View\WebView;
  * @var string $content
  * @var CsrfTokenInterface $csrf
  * @var TranslatorInterface $translator
+ * @var UrlGeneratorInterface $urlGenerator
  * @var UrlMatcherInterface $urlMatcher
  * @var Webview $this
  */
@@ -32,11 +34,16 @@ $this->setJsFiles($assetManager->getJsFiles());
             <body>
                 <section class="hero is-fullheight is-light">
                     <div class="hero-head">
-                        <header class = <?= (isset($identity) && $identity->getId() !== null)
-                            ? "navbar" : "has-background-black" ?>>
+                        <header class = "has-background-black">
                             <?= $this->render(
                                 '_menu',
-                                ['translator' => $translator, 'urlMatcher' => $urlMatcher]
+                                [
+                                    'csrf' => $csrf,
+                                    'translator' => $translator,
+                                    'urlGenerator' => $urlGenerator,
+                                    'urlMatcher' => $urlMatcher,
+                                    'user' => $user ?? [],
+                                ],
                             ) ?>
                         </header>
                         <div>
