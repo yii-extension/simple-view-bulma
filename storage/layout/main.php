@@ -22,8 +22,8 @@ use Yiisoft\View\WebView;
  */
 
 $assetManager->register([ViewBulmaAsset::class]);
-$this->setCssFiles($assetManager->getCssFiles());
-$this->setJsFiles($assetManager->getJsFiles());
+$this->addCssFiles($assetManager->getCssFiles());
+$this->addJsFiles($assetManager->getJsFiles());
 ?>
 
 <?php $this->beginPage() ?>
