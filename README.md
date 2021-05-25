@@ -11,7 +11,6 @@
 [![codecov](https://codecov.io/gh/yii-extension/simple-view-bulma/branch/master/graph/badge.svg?token=tUznVx9Em7)](https://codecov.io/gh/yii-extension/simple-view-bulma)
 [![static analysis](https://github.com/yii-extension/simple-view-bulma/workflows/static%20analysis/badge.svg)](https://github.com/yii-extension/simple-view-bulma/actions?query=workflow%3A%22static+analysis%22)
 [![type-coverage](https://shepherd.dev/github/yii-extension/simple-view-bulma/coverage.svg)](https://shepherd.dev/github/yii-extension/simple-view-bulma)
-[![Open Collective](https://img.shields.io/badge/Open%20Collective-sponsor-7eadf1?logo=open%20collective&logoColor=7eadf1&labelColor=555555)](https://opencollective.com/yiisoft)
 
 ## Directory structure
 
@@ -127,6 +126,10 @@ The code is statically analyzed with [Psalm](https://psalm.dev/docs). To run sta
 ```shell
 ./vendor/bin/psalm
 ```
+
+### Support the project
+
+[![Open Collective](https://img.shields.io/badge/Open%20Collective-sponsor-7eadf1?logo=open%20collective&logoColor=7eadf1&labelColor=555555)](https://opencollective.com/yiisoft)
 
 ### License
 
