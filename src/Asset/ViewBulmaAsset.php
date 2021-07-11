@@ -25,7 +25,6 @@ final class ViewBulmaAsset extends AssetBundle
     public array $depends = [
         BulmaAsset::class,
         BulmaHelpersAsset::class,
-        BulmaJsAsset::class,
         NpmAllAsset::class,
         VizuaalogJsAsset::class,
     ];
