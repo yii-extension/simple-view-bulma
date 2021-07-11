@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
+use Yii\Extension\Bulma\Nav;
+use Yii\Extension\Bulma\NavBar;
+use Yii\Extension\Simple\Forms\Form;
 use Yiisoft\Csrf\CsrfTokenInterface;
-use Yiisoft\Form\Widget\Form;
-use Yiisoft\Html\Html;
+use Yiisoft\Html\Tag\Button;
 use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Router\UrlMatcherInterface;
 use Yiisoft\Translator\TranslatorInterface;
-use Yiisoft\Yii\Bulma\Nav;
-use Yiisoft\Yii\Bulma\NavBar;
 
 /**
  * @var CsrfTokenInterface $csrf
@@ -19,12 +19,6 @@ use Yiisoft\Yii\Bulma\NavBar;
  * @var UrlMatcherInterface $urlMatcher
  */
 
-$config = [
-    'brandLabel()' => [$translator->translate('My Project', [], 'simple-view-bulma')],
-    'brandImage()' => ['/images/yii-logo.jpg'],
-    'itemsOptions()' => [['class' => 'navbar-end']],
-    'options()' => [['class' => 'is-black']],
-];
 $menuItems = [];
 
 if ($user !== [] && !$user->isGuest()) {
@@ -32,19 +26,16 @@ if ($user !== [] && !$user->isGuest()) {
         [
             'label' => Form::widget()
                 ->action($urlGenerator->generate('logout'))
-                ->options(['csrf' => $csrf, 'encode' => false])
+                ->csrf($csrf)
                 ->begin() .
-                    Html::submitButton(
-                        'Logout (' . Html::encode($user->getIdentity()->getUsername()) . ')',
-                        [
-                            'id' => 'logout',
-                            'encode' => false,
-                        ],
-                    ) .
+                    Button::tag()
+                    ->class('btn btn-light btn-sm')
+                    ->content(
+                        'Logout (' . $currentUser->getIdentity()->getUsername() . ')'
+                    )
+                    ->id('logout')
+                    ->type('submit') .
                 Form::end(),
-            'encode' => false,
-            'linkOptions' => ['encode' => false],
-            'options' => ['encode' => false],
         ]
     ];
 }
@@ -57,6 +48,10 @@ if ($currentUri !== null) {
 }
 ?>
 
-<?= NavBar::widget($config)->begin() ?>
-    <?= Nav::widget()->currentPath($currentUrl)->items($menuItems) ?>
+<?= NavBar::widget()
+        ->attributes(['class' => 'is-black'])
+        ->brandImage('/images/yii-logo.jpg')
+        ->brandText($translator->translate('My Project', [], 'simple-view-bulma'))
+        ->begin() ?>
+    <?= Nav::widget()->currentPath($currentUrl)->enclosedByEndMenu()->items($menuItems) ?>
 <?= NavBar::end();

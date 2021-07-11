@@ -14,6 +14,7 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.4|^8.0",
+        "yii-extension/bulma": "^1.0.0",
         "yii-extension/flash-message-bulma": "^1.0.0",
         "yii-extension/fontawesome": "^1.0.0",
         "yiisoft/assets": "^1.0.0",
@@ -21,9 +22,8 @@
         "yiisoft/router-fastroute": "^3.0@dev",
         "yiisoft/translator-formatter-intl": "^1.0.0",
         "yiisoft/translator-message-php": "^1.0.0",
-        "yiisoft/yii-bulma": "^1.0@dev",
         "yiisoft/yii-event": "^1.0.0",
-        "yiisoft/yii-view": "^3.0@dev"
+        "yiisoft/yii-view": "^1.0.0"
     },
     "require-dev": {
         "codeception/c3": "^2.6.0",
@@ -63,11 +63,5 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ]
+    }
 }

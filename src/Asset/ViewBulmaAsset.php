@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Simple\View\Bulma\Asset;
 
+use Yii\Extension\Asset\Bulma\BulmaAsset;
+use Yii\Extension\Asset\Bulma\BulmaHelpersAsset;
+use Yii\Extension\Asset\Bulma\VizuaalogJsAsset;
 use Yii\Extension\Fontawesome\Dev\Js\NpmAllAsset;
 use Yiisoft\Assets\AssetBundle;
-use Yiisoft\Yii\Bulma\Asset\BulmaAsset;
-use Yiisoft\Yii\Bulma\Asset\BulmaHelpersAsset;
 
 final class ViewBulmaAsset extends AssetBundle
 {
@@ -26,5 +27,6 @@ final class ViewBulmaAsset extends AssetBundle
         BulmaHelpersAsset::class,
         BulmaJsAsset::class,
         NpmAllAsset::class,
+        VizuaalogJsAsset::class,
     ];
 }

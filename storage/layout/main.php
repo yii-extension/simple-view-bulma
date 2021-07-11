@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 use Simple\View\Bulma\Asset\ViewBulmaAsset;
-use Yii\Extension\Widget\FlashMessage;
+use Yii\Extension\Bulma\FlashMessage;
 use Yiisoft\Assets\AssetManager;
 use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Router\UrlMatcherInterface;
+use Yiisoft\Session\Flash\Flash;
 use Yiisoft\Translator\TranslatorInterface;
 use Yiisoft\View\WebView;
 
@@ -15,6 +16,7 @@ use Yiisoft\View\WebView;
  * @var AssetManager $assetManager
  * @var string $content
  * @var CsrfTokenInterface $csrf
+ * @var Flash $flash
  * @var TranslatorInterface $translator
  * @var UrlGeneratorInterface $urlGenerator
  * @var UrlMatcherInterface $urlMatcher
@@ -47,7 +49,7 @@ $this->addJsFiles($assetManager->getJsFiles());
                             ) ?>
                         </header>
                         <div>
-                            <?= FlashMessage::widget() ?>
+                            <?= FlashMessage::widget([$flash]) ?>
                         </div>
                     </div>
                     <div class="hero-body is-light">
