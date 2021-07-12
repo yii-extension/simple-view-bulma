@@ -29,7 +29,7 @@ if ($currentUser !== [] && !$currentUser->isGuest()) {
                 ->csrf($csrf)
                 ->begin() .
                     Button::tag()
-                    ->class('btn btn-light btn-sm')
+                    ->class('button is-small is-white')
                     ->content(
                         'Logout (' . $currentUser->getIdentity()->getUsername() . ')'
                     )
