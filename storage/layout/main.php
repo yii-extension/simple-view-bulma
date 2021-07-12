@@ -44,7 +44,7 @@ $this->addJsFiles($assetManager->getJsFiles());
                                     'translator' => $translator,
                                     'urlGenerator' => $urlGenerator,
                                     'urlMatcher' => $urlMatcher,
-                                    'user' => $user ?? [],
+                                    'currentUser' => $currentUser ?? [],
                                 ],
                             ) ?>
                         </header>

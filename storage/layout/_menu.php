@@ -21,7 +21,7 @@ use Yiisoft\Translator\TranslatorInterface;
 
 $menuItems = [];
 
-if ($user !== [] && !$user->isGuest()) {
+if ($currentUser !== [] && !$currentUser->isGuest()) {
     $menuItems =  [
         [
             'label' => Form::widget()
