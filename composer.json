@@ -1,9 +1,9 @@
 {
     "name": "yii-extension/simple-view-bulma",
     "type": "library",
-    "description": "Simple view bulma for web application yii3.",
+    "description": "Simple view bulma for web application yii.",
     "keywords": [
-        "yii3",
+        "yii",
         "simple",
         "view",
         "bulma",
