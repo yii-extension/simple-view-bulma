@@ -2,7 +2,7 @@
     <a href="https://github.com/yii-extension" target="_blank">
         <img src="https://lh3.googleusercontent.com/ehSTPnXqrkk0M3U-UPCjC0fty9K6lgykK2WOUA2nUHp8gIkRjeTN8z8SABlkvcvR-9PIrboxIvPGujPgWebLQeHHgX7yLUoxFSduiZrTog6WoZLiAvqcTR1QTPVRmns2tYjACpp7EQ=w2400" height="100px">
     </a>
-    <h1 align="center">Simple view bulma for web application yii.</h1>
+    <h1 align="center">Simple view bulma web application for yii.</h1>
     <br>
 </p>
 
