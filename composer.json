@@ -14,8 +14,8 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.4|^8.0",
+        "yii-extension/alert-flash-bulma": "^1.0.0",
         "yii-extension/bulma": "^1.0.0",
-        "yii-extension/flash-message-bulma": "^1.0.0",
         "yii-extension/fontawesome": "^1.0.0",
         "yiisoft/assets": "^1.0.0",
         "yiisoft/router": "^3.0@dev",

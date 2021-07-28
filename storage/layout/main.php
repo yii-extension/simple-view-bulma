@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Simple\View\Bulma\Asset\ViewBulmaAsset;
-use Yii\Extension\Bulma\FlashMessage;
+use Yii\Extension\Bulma\AlertFlash;
 use Yiisoft\Assets\AssetManager;
 use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Router\UrlGeneratorInterface;
@@ -49,7 +49,11 @@ $this->addJsFiles($assetManager->getJsFiles());
                             ) ?>
                         </header>
                         <div>
-                            <?= FlashMessage::widget([$flash]) ?>
+                            <?= AlertFlash::widget([$flash])
+                                ->class('is-flex is-align-items-center')
+                                ->iconAttributes(['class' => 'fa-2x is-flex-shrink-0 mr-4'])
+                                ->layoutBody('{icon}{body}{button}')
+                                ->render() ?>
                         </div>
                     </div>
                     <div class="hero-body is-light">
