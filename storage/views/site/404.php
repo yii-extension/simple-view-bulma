@@ -1,15 +1,15 @@
 <?php
 
 use Yiisoft\Html\Html;
+use Yiisoft\Router\CurrentRoute;
 use Yiisoft\Router\UrlGeneratorInterface;
-use Yiisoft\Router\UrlMatcherInterface;
 use Yiisoft\Translator\TranslatorInterface;
 use Yiisoft\View\WebView;
 
 /**
+ * @var CurrentRoute $currentRoute
  * @var TranslatorInterface $translator
  * @var UrlGeneratorInterface $urlGenerator
- * @var UrlMatcherInterface $urlMatcher
  * @var $this WebView
  */
 
@@ -22,7 +22,7 @@ $this->setTitle('404');
 
 <p class="has-text-danger">
     <?= $translator->translate('The page', [], 'simple-view-bulma') ?>
-    <strong><?= Html::encode($urlMatcher->getCurrentUri()->getPath()) ?></strong>
+    <strong><?= Html::encode($currentRoute->getUri()->getPath()) ?></strong>
     <?= $translator->translate('not found', [], 'simple-view-bulma') ?>.
 </p>
 
