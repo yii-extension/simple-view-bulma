@@ -47,6 +47,13 @@ final class ApplicationRunner
         $config = new Config(
             dirname(__DIR__, 3),
             '/config/packages', // Configs path.
+            null,
+            [
+                'params',
+                'events',
+                'events-web',
+                'events-console',
+            ],
         );
 
         /** @psalm-suppress MixedArgumentTypeCoercion */

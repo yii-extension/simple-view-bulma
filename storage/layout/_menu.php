@@ -8,7 +8,7 @@ use Yii\Extension\Simple\Forms\Form;
 use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Html\Tag\Button;
 use Yiisoft\Router\UrlGeneratorInterface;
-use Yiisoft\Router\UrlMatcherInterface;
+use Yiisoft\Router\CurrentRoute;
 use Yiisoft\Translator\TranslatorInterface;
 
 /**
@@ -16,7 +16,7 @@ use Yiisoft\Translator\TranslatorInterface;
  * @var array $menuItems
  * @var TranslatorInterface $translator
  * @var UrlGeneratorInterface $urlGenerator
- * @var UrlMatcherInterface $urlMatcher
+ * @var CurrentRoute $currentRoute
  */
 
 $menuItems = [];
@@ -40,7 +40,7 @@ if ($currentUser !== [] && !$currentUser->isGuest()) {
     ];
 }
 
-$currentUri = $urlMatcher->getCurrentUri();
+$currentUri = $currentRoute->getUri();
 $currentUrl = '';
 
 if ($currentUri !== null) {

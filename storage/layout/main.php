@@ -6,8 +6,8 @@ use Simple\View\Bulma\Asset\ViewBulmaAsset;
 use Yii\Extension\Bulma\AlertFlash;
 use Yiisoft\Assets\AssetManager;
 use Yiisoft\Csrf\CsrfTokenInterface;
+use Yiisoft\Router\CurrentRoute;
 use Yiisoft\Router\UrlGeneratorInterface;
-use Yiisoft\Router\UrlMatcherInterface;
 use Yiisoft\Session\Flash\Flash;
 use Yiisoft\Translator\TranslatorInterface;
 use Yiisoft\View\WebView;
@@ -19,7 +19,7 @@ use Yiisoft\View\WebView;
  * @var Flash $flash
  * @var TranslatorInterface $translator
  * @var UrlGeneratorInterface $urlGenerator
- * @var UrlMatcherInterface $urlMatcher
+ * @var CurrentRoute $currentRoute
  * @var Webview $this
  */
 
@@ -41,9 +41,9 @@ $this->addJsFiles($assetManager->getJsFiles());
                                 '_menu',
                                 [
                                     'csrf' => $csrf,
+                                    'currentRoute' => $currentRoute,
                                     'translator' => $translator,
                                     'urlGenerator' => $urlGenerator,
-                                    'urlMatcher' => $urlMatcher,
                                     'currentUser' => $currentUser ?? [],
                                 ],
                             ) ?>
