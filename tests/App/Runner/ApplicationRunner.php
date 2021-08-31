@@ -108,8 +108,8 @@ final class ApplicationRunner
             // build config tests
             require(dirname(__DIR__, 2) . '/_data/config/psr-http-message.php'),
             require(dirname(__DIR__, 2) . '/_data/config/psr-log.php'),
-            require(dirname(__DIR__, 2) . '/_data/config/yiisoft-router.php'),
-            require(dirname(__DIR__, 2) . '/_data/config/yiisoft-web.php'),
+            require(dirname(__DIR__, 2) . '/_data/config/router.php'),
+            require(dirname(__DIR__, 2) . '/_data/config/application.php'),
             $config->get('common'),
             $config->get('web'),
         );

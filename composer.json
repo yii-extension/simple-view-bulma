@@ -21,7 +21,7 @@
         "yiisoft/router": "^3.0@dev",
         "yiisoft/router-fastroute": "^3.0@dev",
         "yiisoft/translator-formatter-intl": "^1.0",
-        "yiisoft/translator-message-php": "^1.0",
+        "yiisoft/translator-message-php": "dev-master as 1.1",
         "yiisoft/yii-event": "^1.0",
         "yiisoft/yii-view": "^2.0"
     },
