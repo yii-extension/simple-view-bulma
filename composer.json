@@ -34,7 +34,8 @@
         "psr/log": "^1.1",
         "roave/infection-static-analysis-plugin": "^1.7",
         "vimeo/psalm": "^4.7",
-        "yiisoft/config": "^1.0@dev",
+        "yii-extension/simple-app": "^1.0",
+        "yiisoft/config": "dev-alternative-implementation",
         "yiisoft/di": "^3.0@dev",
         "yiisoft/error-handler": "^1.0.0",
         "yiisoft/yii-web": "^3.0@dev"
@@ -54,11 +55,19 @@
             "dev-master": "1.0.x-dev"
         },
         "config-plugin": {
-            "params": "config/params.php",
+            "params": "params.php",
             "common": [
-                "config/common/*.php"
+                "common/*.php"
             ],
-            "routes": "config/routes.php"
+            "routes": "routes.php"
+        },
+        "config-plugin-environments": {
+            "tests": {
+                "params": "tests/params.php",
+                "web": [
+                    "tests/web/*.php"
+                ]
+            }
         }
     },
     "config": {
