@@ -18,4 +18,5 @@ coverage:
     include:
         - src/*
     exclude:
+        - src/Action/*
         - src/Asset/*
