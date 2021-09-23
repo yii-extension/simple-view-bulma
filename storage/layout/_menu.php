@@ -12,16 +12,19 @@ use Yiisoft\Router\CurrentRoute;
 use Yiisoft\Translator\TranslatorInterface;
 
 /**
- * @var CsrfTokenInterface $csrf
+ * @var string $csrf
+ * @var CurrentRoute $currentRoute
+ * @var bool|null $isGuest
  * @var array $menuItems
  * @var TranslatorInterface $translator
  * @var UrlGeneratorInterface $urlGenerator
- * @var CurrentRoute $currentRoute
+ * @var string $userName
  */
 
+$isGuest = $isGuest ?? null;
 $menuItems = [];
 
-if ($currentUser !== [] && !$currentUser->isGuest()) {
+if ($isGuest === false) {
     $menuItems =  [
         [
             'label' => Form::widget()
@@ -31,7 +34,7 @@ if ($currentUser !== [] && !$currentUser->isGuest()) {
                     Button::tag()
                     ->class('button is-small is-white')
                     ->content(
-                        'Logout (' . $currentUser->getIdentity()->getUsername() . ')'
+                        'Logout (' . $userName . ')'
                     )
                     ->id('logout')
                     ->type('submit') .
@@ -40,12 +43,7 @@ if ($currentUser !== [] && !$currentUser->isGuest()) {
     ];
 }
 
-$currentUri = $currentRoute->getUri();
-$currentUrl = '';
-
-if ($currentUri !== null) {
-    $currentUrl = $currentUri->getPath();
-}
+$currentUrl = $currentRoute->getUri() !== null ? $currentRoute->getUri()->getPath() : '';
 ?>
 
 <?= NavBar::widget()
