@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Simple\View\Bulma\ViewInjection;
 
 use Yiisoft\Assets\AssetManager;
-use Yiisoft\Router\CurrentRoute;
+use Yiisoft\Router\CurrentRouteInterface;
 use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Session\Flash\Flash;
 use Yiisoft\Translator\TranslatorInterface;
@@ -15,14 +15,14 @@ use Yiisoft\Yii\View\LayoutParametersInjectionInterface;
 final class ParametersViewInjection implements CommonParametersInjectionInterface, LayoutParametersInjectionInterface
 {
     private AssetManager $assetManager;
-    private CurrentRoute $currentRoute;
+    private CurrentRouteInterface $currentRoute;
     private Flash $flash;
     private TranslatorInterface $translator;
     private UrlGeneratorInterface $urlGenerator;
 
     public function __construct(
         AssetManager $assetManager,
-        CurrentRoute $currentRoute,
+        CurrentRouteInterface $currentRoute,
         Flash $flash,
         TranslatorInterface $translator,
         UrlGeneratorInterface $urlGenerator
