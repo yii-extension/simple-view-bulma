@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 use Yii\Extension\Bulma\Nav;
 use Yii\Extension\Bulma\NavBar;
-use Yii\Extension\Simple\Forms\Form;
 use Yiisoft\Csrf\CsrfTokenInterface;
+use Yiisoft\Form\Widget\Form;
 use Yiisoft\Html\Tag\Button;
-use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Router\CurrentRoute;
+use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Translator\TranslatorInterface;
 
 /**
- * @var string $csrf
+ * @var CsrfTokenInterface $csrf
  * @var CurrentRoute $currentRoute
  * @var bool|null $isGuest
  * @var array $menuItems
