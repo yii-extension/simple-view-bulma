@@ -23,7 +23,7 @@ use Yiisoft\View\WebView;
  * @var Webview $this
  */
 
-$assetManager->register([ViewBulmaAsset::class]);
+$assetManager->registerMany([ViewBulmaAsset::class]);
 $this->addCssFiles($assetManager->getCssFiles());
 $this->addJsFiles($assetManager->getJsFiles());
 ?>
