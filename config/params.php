@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Simple\View\Bulma\Handler\NotFoundHandler;
 use Simple\View\Bulma\ViewInjection\ParametersViewInjection;
 use Yiisoft\Definitions\Reference;
 use Yiisoft\Yii\View\CsrfViewInjection;
@@ -12,6 +13,10 @@ return [
             '@simple-view-bulma' => '@vendor/yii-extension/simple-view-bulma',
             '@layout' => '@simple-view-bulma/storage/layout',
         ]
+    ],
+
+    'yiisoft/yii/http' => [
+        'notFoundHandler' => NotFoundHandler::class,
     ],
 
     'yiisoft/yii-view' => [
