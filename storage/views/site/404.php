@@ -17,7 +17,7 @@ $this->setTitle('404');
 ?>
 
 <h1 class="is-size-1">
-    <b>404</b>
+    <b><?= Html::encode($this->getTitle()) ?></b>
 </h1>
 
 <p class="has-text-danger">

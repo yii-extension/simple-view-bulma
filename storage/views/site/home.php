@@ -11,9 +11,7 @@ use Yiisoft\View\WebView;
  * @var $this WebView
  */
 
-$title = $translator->translate('My Project', [], 'simple-view-bulma');
-
-$this->setTitle(Html::encode($title));
+$this->setTitle($translator->translate('My Project', [], 'simple-view-bulma'));
 ?>
 
 <h1 class="title"><?= $translator->translate('Hello!', [], 'simple-view-bulma') ?></h1>
