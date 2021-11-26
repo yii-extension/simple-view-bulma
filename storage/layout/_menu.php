@@ -25,7 +25,7 @@ use Yiisoft\View\WebView;
  */
 $menuItems = $this->getParameter('menuItemsIsGuest', []);
 
-if ($identity instanceof IdentityInterface) {
+if (isset($identity) && $identity instanceof IdentityInterface) {
     $menuItems = $this->getParameter('menuItemsIsNotGuest', []);
     $menuItems =  [
         [
