@@ -4,27 +4,29 @@ declare(strict_types=1);
 
 use Yii\Extension\Bulma\Nav;
 use Yii\Extension\Bulma\NavBar;
+use Yiisoft\Auth\IdentityInterface;
 use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Form\Widget\Form;
 use Yiisoft\Html\Tag\Button;
 use Yiisoft\Router\CurrentRoute;
 use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Translator\TranslatorInterface;
+use Yiisoft\View\WebView;
 
 /**
  * @var CsrfTokenInterface $csrf
  * @var CurrentRoute $currentRoute
- * @var bool|null $isGuest
+ * @var IdentityInterface $identity
  * @var array $menuItems
  * @var TranslatorInterface $translator
  * @var UrlGeneratorInterface $urlGenerator
  * @var string $userName
+ * @var WebView $this
  */
+$menuItems = $this->getParameter('menuItemsIsGuest', []);
 
-$isGuest = $isGuest ?? null;
-$menuItems = [];
-
-if ($isGuest === false) {
+if ($identity instanceof IdentityInterface) {
+    $menuItems = $this->getParameter('menuItemsIsNotGuest', []);
     $menuItems =  [
         [
             'label' => Form::widget()
@@ -34,7 +36,7 @@ if ($isGuest === false) {
                     Button::tag()
                     ->class('button is-small is-white')
                     ->content(
-                        'Logout (' . $userName . ')'
+                        'Logout (' . $identity->user->username . ')'
                     )
                     ->id('logout')
                     ->type('submit') .
