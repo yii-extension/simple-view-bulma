@@ -20,7 +20,6 @@ use Yiisoft\View\WebView;
  * @var array $menuItems
  * @var TranslatorInterface $translator
  * @var UrlGeneratorInterface $urlGenerator
- * @var string $userName
  * @var WebView $this
  */
 $menuItems = $this->getParameter('menuItemsIsGuest', []);
