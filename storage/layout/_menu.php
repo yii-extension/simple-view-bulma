@@ -35,7 +35,7 @@ if (isset($identity) && $identity instanceof IdentityInterface) {
                     Button::tag()
                     ->class('button is-small is-white')
                     ->content(
-                        'Logout (' . $identity->user->username . ')'
+                        'Logout (' . $identity->account->username . ')'
                     )
                     ->id('logout')
                     ->type('submit') .
