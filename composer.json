@@ -29,7 +29,7 @@
         "codeception/c3": "^2.6",
         "codeception/codeception": "^4.1",
         "codeception/module-asserts": "^1.3",
-        "codeception/module-phpbrowser": "^1.0",
+        "codeception/module-phpbrowser": "^2.0",
         "vimeo/psalm": "^4.7",
         "yii-extension/simple-app": "^1.0"
     },
