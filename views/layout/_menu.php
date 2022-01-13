@@ -26,21 +26,19 @@ $menuItems = $this->getParameter('menuItemsIsGuest', []);
 
 if (isset($identity) && $identity instanceof IdentityInterface) {
     $menuItems = $this->getParameter('menuItemsIsNotGuest', []);
-    $menuItems =  [
-        [
-            'label' => Form::widget()
-                ->action($urlGenerator->generate('logout'))
-                ->csrf($csrf)
-                ->begin() .
-                    Button::tag()
-                    ->class('button is-small is-white')
-                    ->content(
-                        'Logout (' . $identity->account->username . ')'
-                    )
-                    ->id('logout')
-                    ->type('submit') .
-                Form::end(),
-        ]
+    $menuItems[] =  [
+        'label' => Form::widget()
+            ->action($urlGenerator->generate('logout'))
+            ->csrf($csrf)
+            ->begin() .
+            Button::tag()
+                ->class('button is-small is-white')
+                ->content(
+                    'Logout (' . $identity->account->username . ')'
+                )
+                ->id('logout')
+                ->type('submit') .
+            Form::end(),
     ];
 }
 
