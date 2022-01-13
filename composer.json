@@ -20,8 +20,8 @@
         "yiisoft/assets": "^2.0",
         "yiisoft/form": "^1.0@dev",
         "yiisoft/translator-formatter-intl": "^1.0",
-        "yiisoft/translator-message-php": "@dev",
-        "yiisoft/user": "^3.0@dev",
+        "yiisoft/translator-message-php": "^1.0",
+        "yiisoft/user": "^1.0",
         "yiisoft/yii-event": "^1.0",
         "yiisoft/yii-view": "^4.0"
     },
